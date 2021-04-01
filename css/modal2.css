@@ -37,23 +37,23 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .header-logo {
-    float: left;
-    display:flex;
-    align-items: center;
+  float: left;
+  display: flex;
+  align-items: center;
 }
 
-@media screen and (max-width:460px){
-.header-logo-img{
-    width:155px;
-}
+@media screen and (max-width: 460px) {
+  .header-logo-img {
+    width: 155px;
+  }
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -64,7 +64,7 @@ img {
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .topnav a:hover {
@@ -84,7 +84,9 @@ img {
 }
 
 @media screen and (max-width: 1114px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -92,10 +94,12 @@ img {
 }
 
 @media screen and (max-width: 1114px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
-  display:flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
     position: absolute;
     right: 0;
     top: 0;
@@ -107,10 +111,6 @@ img {
   }
 }
 
-
-
-  
-
 main {
   font-size: 130%;
   font-weight: bolder;
@@ -121,8 +121,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -204,7 +202,7 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
-  margin-top:15px;
+  margin-top: 15px;
 }
 input {
   padding: 8px;
@@ -220,12 +218,11 @@ input {
   height: 48px;
 }
 
-
-.formError{
-  font-size:15px ;
+.formError {
+  font-size: 15px;
+  height:15px;
+  display: inline-block;
 }
-
-
 
 .formData[data-error]::after {
   content: attr(data-error);
@@ -425,10 +422,9 @@ input[data-error]::after {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
-  margin-top:15px;
+  margin-top: 15px;
 }
 .hero-section {
-  
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -443,7 +439,7 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  width:100%;
+  width: 100%;
 }
 .hero-content::after {
   content: "";
@@ -505,15 +501,14 @@ footer {
   .hero-section {
     display: block;
     box-shadow: unset;
-    width:100%;
+    width: 100%;
   }
   .hero-content {
     background: #fff;
     color: #000;
     padding: 20px;
-    width:100%;
+    width: 100%;
   }
-
 
   .hero-content::after {
     content: unset;
@@ -524,13 +519,11 @@ footer {
   .hero-headline {
     font-size: 4.5rem;
     white-space: normal;
-
   }
   .hero-text {
     width: 100%;
     font-size: 1.5rem;
     white-space: normal;
-   
   }
   .hero-img img {
     border-radius: 10px;
@@ -548,36 +541,30 @@ footer {
 }
 
 @media screen and (min-width: 320px) and (max-width: 1024px) {
-    .hero-headline {
-        font-size: 3rem;
-        white-space: normal;
-        overflow-wrap: break-word;
-      }
+  .hero-headline {
+    font-size: 3rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
 
+@media screen and (min-width: 1025px) {
+  .hero-section {
+    height: 657px;
+  }
+  .hero-content {
+    height: 657px;
   }
 
-  @media screen and (min-width:1025px){
+  .hero-img {
+    height: 657px;
+  }
 
-
-
-    .hero-section{
-    height:657px;
+  .hero-headline {
+    width: 800px;
+    white-space: unset;
+  }
 }
-.hero-content{
-    height:657px;
-}
-
-.hero-img{
-    height:657px
-}
-
-.hero-headline{
-    width:800px;
-    white-space:unset;
-}
- }
-
-  
 
 @keyframes modalopen {
   from {
@@ -588,4 +575,3 @@ footer {
     opacity: 1;
   }
 }
-

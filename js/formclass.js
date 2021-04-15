@@ -35,7 +35,7 @@ const formInit = () => {
 
 let allInputs = document.getElementsByClassName("text-control");
 let allErrors = document.getElementsByClassName("formError");
-let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
+let fieldErrorTextMissing = "Ce champs doit être rempli si vous souhaitez vous inscrire";
 let nameFieldInputOk = /^[a-zA-ZÀ-ÖØ-öø-ÿ -]+$/;
 let nameFieldErrorTextShort = "Veuillez entrer 2 caractères ou plus pour ce champ";
 let fieldErrorTextNotOk = "Ce champ ne doit contenir que des lettres et des '-'";
@@ -124,7 +124,7 @@ const birthdateFieldCheck = () => {
         allInputs[3].disabled = true;
         return false;
     }
-    if (allInputs[3].value >= birthdateFieldInputMax || allInputs[3].value < birthdateFieldInputMin) {
+    if (allInputs[3].value > birthdateFieldInputMax || allInputs[3].value < birthdateFieldInputMin) {
         allErrors[3].innerHTML = birthdateFieldErrorTextNotOk;
         allErrors[3].style.color = "orange";
         return false;
@@ -170,7 +170,7 @@ const locationButtonCheck = () => {
             allErrors[5].style.color = "green";
             return true;
         }
-    }return false;
+    }
 }
 
 const checkboxTcCheck = () => {
@@ -179,54 +179,44 @@ const checkboxTcCheck = () => {
         allErrors[6].style.color = 'orange';
         return false;
     }
-    allErrors[6].innerHTML = " ";
+    allErrors[6].innerHTML = "";
     return true;
 }
 
 const formSubmission = (event) => {
     let errorSubmit = document.getElementById("messagesubmit");
-    const locationCheckBox = document.getElementById("errorlocation");
-    locationCheckBox.style.color = "orange";
-    errorSubmit.style.color = 'orange';
-    let errorSubmitMessage = () => { errorSubmit.innerHTML = "Veuillez remplir tous les champs pour valider votre inscription" };
-    let locationCheckBoxError = () => {locationCheckBox.innerHTML ="Vous devez choisir une option" };
+    let locationCheckBoxError = document.getElementById("errorlocation");
+    let errorSubmitMessage = () => { errorSubmit.innerHTML = "Veuilez remplir tous les champs pour valider votre inscription" };
 
     if (nameFieldCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
+        event.preventDefault();
     }
     if (surnameFieldCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
+        event.preventDefault();
     };
     if (emailFieldCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
+        event.preventDefault();
     }
     if (birthdateFieldCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
-
+        event.preventDefault();
     }
     if (tournamentFieldCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
+        event.preventDefault();
     }
     if (locationButtonCheck() !== true) {
-        event.preventDefault();
+        locationCheckBoxError.innerHTML = "Vous devez choisir une option";
+        locationCheckBoxError.style.color = "orange";
         errorSubmitMessage();
-        locationCheckBoxError();
-        return false;
+        event.preventDefault();
     }
     if (checkboxTcCheck() !== true) {
-        event.preventDefault();
         errorSubmitMessage();
-        return false;
+        event.preventDefault();
     }
     location.href = "validation.html";
 };

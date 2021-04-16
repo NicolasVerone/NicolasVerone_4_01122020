@@ -219,8 +219,7 @@ input {
 }
 
 .formError {
-  font-size: 15px;
-  height:15px;
+  font-size: 13px;
   display: inline-block;
 }
 

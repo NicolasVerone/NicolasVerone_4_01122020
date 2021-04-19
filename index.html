@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Game On</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/modal2.css" />
+  <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 </head>
@@ -58,75 +58,78 @@
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" placeholder="Votre Prénom" />
-              <span class="formError" name="error" id="errorfirst"></span>
+              <span class="formError"  id="errorfirst"></span>
             </div>
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" placeholder="Votre Nom" />
-              <span class="formError" name="error"  id="errorlast"></span>
+              <span class="formError"  id="errorlast"></span>
             </div>
             <div class="formData">
               <label for="email">E-mail</label>
               <input class="text-control" type="email" id="email" name="email" placeholder="adresse@exemple.com" />
-              <span class="formError" name="error" id="erroremail"></span>
+              <span class="formError"  id="erroremail"></span>
             </div>
             <div class="formData">
               <label for ="birthdate">Date de naissance</label>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" placeholder="01/01/1995" />
-              <span class="formError" name="error" id="errorbirthdate"></span>
+              <input class="text-control" type="date" id="birthdate" name="birthdate"  />
+              <span class="formError"  id="errorbirthdate"></span>
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
-              <input type="number" class="text-control" id="quantity" name="quantity"  min="0" max="6" placeholder="Entrez une valeur entre 0 et 6">
-              <span class="formError" name="error" id="errorquantity"></span>
+              <input type="number" class="text-control" id="quantity" name="quantity"  min="0" max="6" placeholder="Choisissez un nombre entre 0 et 6">
+              <span class="formError"  id="errorquantity"></span>
             </div>
-            <p class="text-label">Quelles villes ?</p>
+
             <div class="formData">
+              <fieldset>
+                <legend class="text-label">Quelles villes ?</legend>
               <input class="checkbox-input"  type="radio" id="location1" name="location" value="New York" />
-              <label for="location1" class="checkbox-label" for="location1">
+              <label for="location1" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 New York</label>
               <input class="checkbox-input"  type="radio" id="location2" name="location" value="San Francisco" />
-              <label for="location2" class="checkbox-label" for="location2">
+              <label for="location2" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 San Francisco</label>
               <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
-              <label for ="location3"class="checkbox-label" for="location3">
+              <label for ="location3" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 Seattle</label>
               <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
-              <label for="location4" class="checkbox-label" for="location4">
+              <label for="location4" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 Chicago</label>
               <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
-              <label for="location5" class="checkbox-label" for="location5">
+              <label for="location5" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 Boston</label>
               <input class="checkbox-input"  type="radio" id="location6" name="location" value="Portland" />
-              <label for="location6" class="checkbox-label" for="location6">
+              <label for="location6" class="checkbox-label">
                 <span class="checkbox-icon"></span>
                 Portland</label><br>
-                <span class="formError" name="error" id="errorlocation"></span>
+                <span class="formError" id="errorlocation"></span>
+              </fieldset>
             </div>
 
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1"/>
-              <label for="checkbox1" class="checkbox2-label" for="checkbox1" >
+              <label for="checkbox1" class="checkbox2-label" >
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
-              <span class="formError" name="error" id="errorcheckbox"></span>
+              <span class="formError" id="errorcheckbox"></span>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
-              <label for="checkbox2" class="checkbox2-label" for="checkbox2">
+              <label for="checkbox2" class="checkbox2-label">
                 <span class="checkbox-icon"></span>
                 Je souhaite être prévenu des prochains évènements.
               </label>
               <br>
              
             </div>
-            <input class="btn-submit" type="submit" class="button" id="submitbutton" value="C'est parti" />
-            <span class="formError" name="error" id="messagesubmit"></span>
+            <input class="btn-submit" type="submit" id="submitbutton" value="C'est parti" />
+            <span class="formError"  id="messagesubmit"></span>
           </form>
         </div>
       </div>
@@ -137,8 +140,8 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
-  <script type="text/javascript" src="js/modal.js"></script>
-  <script type="text/javascript" src="js/form.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>

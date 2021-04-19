@@ -39,33 +39,18 @@ const formInit = () => {
     });
 };
 
-// déclaration des variables de vérification des données
-
-let allInputs = document.getElementsByClassName("text-control");
-let allErrors = document.getElementsByClassName("formError");
-let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
-let nameFieldInputOk = /^[a-zA-ZÀ-ÖØ-öø-ÿ -]+$/;
-let nameFieldErrorTextShort = "Veuillez entrer 2 caractères ou plus pour ce champ";
-let fieldErrorTextNotOk = "Ce champ ne doit contenir que des lettres et des '-'";
-let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
-let emailFieldErrorTextNotOk = "Ce champ doit contenir une adresse email valide";
-let emailFieldInputOk = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})/;
-let birthdateFieldInputMax = "2003-05-01";
-let birthdateFieldInputMin = "1900-01-01";
-let birthdateFieldErrorTextNotOk = "Votre date de naissance ne vous permet pas de vous inscrire";;
-let birthdateFieldErrorTextWrong = "Vous devez entrer votre date de naissance.";
-let tournamentFieldErrorTextNotOk = "Ce champ doit contenir une valeur comprise entre 0 et 6"
-let locationCheckBox = document.getElementsByName("location");
-let locationCheckBoxErrorOk = "Merci pour votre réponse";
-let checkboxTc = document.getElementById("checkbox1");
-
-
 // fonction vérification champ prénom
 const nameFieldCheck = () => {
-
+    let allInputs = document.getElementsByClassName("text-control");
+    let allErrors = document.getElementsByClassName("formError");
+    let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
+    let nameFieldInputOk = /^[a-zA-ZÀ-ÖØ-öø-ÿ -]+$/;
+    let nameFieldErrorTextShort = "Veuillez entrer 2 caractères ou plus pour ce champ";
+    let fieldErrorTextNotOk = "Ce champ ne doit contenir que des lettres et des '-'";
+    let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
     // vérification changement attribut du champ par l'utilisateur
     if (allInputs[0].type != "text") {
-        nameFieldInput.disabled = true;
+        allInputs[0].disabled = true;
         return false;
     }
 
@@ -98,6 +83,13 @@ const nameFieldCheck = () => {
 
 // fonction vérification champ prénom
 const surnameFieldCheck = () => {
+    let allInputs = document.getElementsByClassName("text-control");
+    let allErrors = document.getElementsByClassName("formError");
+    let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
+    let nameFieldInputOk = /^[a-zA-ZÀ-ÖØ-öø-ÿ -]+$/;
+    let nameFieldErrorTextShort = "Veuillez entrer 2 caractères ou plus pour ce champ";
+    let fieldErrorTextNotOk = "Ce champ ne doit contenir que des lettres et des '-'";
+    let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
     // vérification changement attribut du champ par l'utilisateur
     if (allInputs[1].type != "text") {
         surnameFieldInput.disabled = true;
@@ -129,6 +121,12 @@ const surnameFieldCheck = () => {
 
 // fonction vérification champ email
 const emailFieldCheck = () => {
+    let allInputs = document.getElementsByClassName("text-control");
+    let allErrors = document.getElementsByClassName("formError");
+    let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
+    let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
+    let emailFieldErrorTextNotOk = "Ce champ doit contenir une adresse email valide";
+    let emailFieldInputOk = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})/;
     // vérification changement attribut du champ par l'utilisateur
     if (allInputs[2].type != "email") {
         allInputs[2].disabled = true;
@@ -154,24 +152,56 @@ const emailFieldCheck = () => {
 
 // vérification du champ date de naissance
 const birthdateFieldCheck = () => {
-    // vérification changement attribut du champ par l'utilisateur
-    if (allInputs[3].type != "date") {
-        allInputs[3].disabled = true;
-        return false;
-    }
-    // vérification de l'âge de l'utlisateur (entre 01/01/1900 et 01/05/2003)
-    if (allInputs[3].value >= birthdateFieldInputMax || allInputs[3].value < birthdateFieldInputMin) {
-        allErrors[3].innerHTML = birthdateFieldErrorTextNotOk;
+let allInputs = document.getElementsByClassName("text-control");
+let allErrors = document.getElementsByClassName("formError");
+  let birthdateFieldErrorTextNotOk = "Votre date de naissance ne vous permet pas de vous inscrire";;
+  let fieldErrorTextMissingBirthdate = "Vous devez entrer votre date de naissance";
+  let birthdateFieldErrorTextWrong = "Veuillez saisir une année valide";
+  let birthdateFieldInputMax = "2003-05-01";
+  let birthdateFieldInputMin = "1900-01-01";
+  let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
+  allInputs[3].maxlength = 10;
+      // vérification changement attribut du champ par l'utilisateur
+      if (allInputs[3].type != "date") {
+          allInputs[3].disabled = true;
+          return false;
+      }
+
+      if (allInputs[3].value.trim() === "") {
+        allErrors[3].innerHTML = fieldErrorTextMissingBirthdate
         allErrors[3].style.color = "orange";
         return false;
     }
-    // valeur OK
-    allErrors[3].innerHTML = fieldErrorTextOk;
-    allErrors[3].style.color = "green";
-    return true;
-}
+
+
+
+      // vérification de l'âge de l'utlisateur (entre 01/01/1900 et 01/05/2003)
+      if (allInputs[3].value >= birthdateFieldInputMax || allInputs[3].value < birthdateFieldInputMin) {
+              allErrors[3].innerHTML = birthdateFieldErrorTextNotOk;
+              allErrors[3].style.color = "red";
+              return false;
+      }
+
+      if (allInputs[3].value.length >10) {
+          allErrors[3].innerHTML = birthdateFieldErrorTextWrong;
+          allErrors[3].style.color = "orange";
+          return false;
+      }
+  
+     
+  
+      // valeur OK
+      allErrors[3].innerHTML = fieldErrorTextOk;
+      allErrors[3].style.color = "green";
+      return true;
+  }
 // vérification du champ nombre de tournois
 const tournamentFieldCheck = () => {
+    let allInputs = document.getElementsByClassName("text-control");
+    let allErrors = document.getElementsByClassName("formError");
+    let tournamentFieldErrorTextNotOk = "Ce champ doit contenir une valeur comprise entre 0 et 6"
+    let fieldErrorTextOk = "Merci, ce champ est correctement rempli !";
+    let fieldErrorTextMissing = "Ce champ doit être rempli si vous souhaitez vous inscrire";
     // vérification changement attribut du champ par l'utilisateur
     if (allInputs[4].type !== "number") {
         allInputs[4].disabled = true;
@@ -196,6 +226,10 @@ const tournamentFieldCheck = () => {
 }
 // vérification des boutons radios ville
 const locationButtonCheck = () => {
+    let locationCheckBox = document.getElementsByName("location");
+    let locationCheckBoxErrorOk = "Merci pour votre réponse";
+    let allErrors = document.getElementsByClassName("formError");
+
     // création d'une boucle vérifiant si un des boutons radio est coché
     for (let i = 0; i < locationCheckBox.length; i++) {
         if (locationCheckBox[i].checked) {
@@ -209,6 +243,8 @@ const locationButtonCheck = () => {
 
 // vérification ddes conditions générales bien cochés
 const checkboxTcCheck = () => {
+    let checkboxTc = document.getElementById("checkbox1");
+    let allErrors = document.getElementsByClassName("formError");
     // si les conditions générales ne sont pas cochées
     if (!checkboxTc.checked) {
         allErrors[6].innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
@@ -222,11 +258,10 @@ const checkboxTcCheck = () => {
 }// Fonction validation du formulaire
 const formSubmission = (event) => {
     let errorSubmit = document.getElementById("messagesubmit");
+    let locationCheckBoxError = () => {locationCheckBox.innerHTML ="Vous devez choisir une option" };
     const locationCheckBox = document.getElementById("errorlocation");
-    locationCheckBox.style.color = "orange";
     errorSubmit.style.color = 'orange';
     let errorSubmitMessage = () => { errorSubmit.innerHTML = "Veuillez remplir tous les champs pour valider votre inscription" };
-    let locationCheckBoxError = () => {locationCheckBox.innerHTML ="Vous devez choisir une option" };
 
     if (nameFieldCheck() !== true) {
         event.preventDefault();
@@ -257,6 +292,7 @@ const formSubmission = (event) => {
     if (locationButtonCheck() !== true) {
         event.preventDefault();
         errorSubmitMessage();
+        locationCheckBox.style.color = "orange";
         locationCheckBoxError();
         return false;
     }
@@ -269,3 +305,4 @@ const formSubmission = (event) => {
 };
 
 formInit();
+

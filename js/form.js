@@ -222,7 +222,9 @@ const locationButtonCheck = () => {
     if (locationCheckBox[0].checked ||
         locationCheckBox[1].checked ||
         locationCheckBox[2].checked ||
-        locationCheckBox[3].checked) {
+        locationCheckBox[3].checked ||
+        locationCheckBox[4].checked ||
+        locationCheckBox[5].checked) {
         locationError.innerHTML = "Merci pour votre réponse !";
         locationError.style.color = "green";
         return true

@@ -56,23 +56,36 @@ const nameFieldCheck = () => {
     if (nameInput.value.trim() === "") {
         showMessage(nameError, nameInput, "Ce champ doit être rempli si vous souhaitez vous inscrire",
             "orange", "2px solid orange")
+        /*nameError.innerHTML = "Ce champ doit être rempli si vous souhaitez vous inscrire";
+        nameError.style.color = "orange";
+        nameInput.style.border = "2px solid orange";
+        */
         return false;
     }
     // vérification si longueur de valeur insuffisante
     if (nameInput.value.length < 2) {
         showMessage(nameError, nameInput, "Veuillez entrer 2 caractères ou plus pour ce champ",
             "orange", "2px solid orange")
+        /*nameError.innerHTML = "Veuillez entrer 2 caractères ou plus pour ce champ";
+        nameError.style.color = "orange"
+        nameInput.style.border = "2px solid orange";*/
         return false;
     }
     // vérification si valeur correpond à la regex servant de référence
     if (!nameInputOk.test(nameInput.value)) {
         showMessage(nameError, nameInput, "Ce champ ne peut contenir que des lettres et des '-'",
             "red", "2px solid red");
+        /*nameError.innerHTML = "Ce champ ne peut contenir que des lettres et des '-'";
+        nameError.style.color = "red";
+        nameInput.style.border = "2px solid red";*/
         return false;
     }
     // valeur OK
     showMessage(nameError, nameInput, "Merci, ce champ est correctement rempli !",
         "green", "2px solid green");
+    /*nameError.innerHTML = "Merci, ce champ est correctement rempli !";
+    nameError.style.color = "green";
+    nameInput.style.border = "2px solid green";*/
     return true
 }
 
@@ -155,23 +168,23 @@ const birthdateFieldCheck = () => {
     // vérification de l'âge de l'utlisateur (entre 01/01/1900 et 01/05/2003)
     if (birthdateInput.value.trim() === "") {
         showMessage(birthdateError, birthdateInput, "Ce champ doit être rempli si vous souhaitez vous inscrire",
-            "orange", "2px solid orange")
+        "orange", "2px solid orange" )
         return false;
     }
     if (birthdateInput.value >= birthdateFieldInputMax
         || birthdateInput.value < birthdateFieldInputMin) {
-        showMessage(birthdateError, birthdateInput, "Votre date de naissance ne vous permet pas de votre inscrire",
-            "orange", "2px solid orange")
+            showMessage(birthdateError, birthdateInput, "Votre date de naissance ne vous permet pas de votre inscrire",
+            "red", "2px solid red" )
         return false;
     }
     if (birthdateInput.value.length > 10) {
         showMessage(birthdateError, birthdateInput, "Veuillez remplir ce champ avec une année valide",
-            "red", "2px solid red")
+        "orange", "2px solid orange" )
         return false;
     }
     // valeur OK
     showMessage(birthdateError, birthdateInput, "Merci, ce champ est correctement rempli !",
-        "green", "2px solid green")
+    "green", "2px solid green" )
     return true;
 }
 
@@ -187,18 +200,18 @@ const tournamentFieldCheck = () => {
     // vérification de la valeur entrée par l'utilsateur (entre 0 et 6)
     if (tournamentInput.value < 0 || tournamentInput.value > 6) {
         showMessage(tournamentError, tournamentInput, "Ce champ doit contenir une valeur comprise entre 0 et 6",
-            "red", "2px solid red");
+        "red", "2px solid red");
         return false;
     }
     // vérification de l'absence de valeur entrée de l'utilisateur
     if (tournamentInput.value === "") {
         showMessage(tournamentError, tournamentInput, "Ce champ doit être rempli si vous souhaitez vous inscrire",
-            "orange", "2px solid orange");
+        "orange", "2px solid orange");
         return false;
     }
     // valeur OK
     showMessage(tournamentError, tournamentInput, "Mecri, ce champ est correctement rempli !",
-        "green", "2px solid green");
+    "green", "2px solid green");
     return true;
 }
 

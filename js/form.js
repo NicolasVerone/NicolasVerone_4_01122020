@@ -145,6 +145,7 @@ const birthdateFieldCheck = () => {
     const birthdateInput = document.getElementById("birthdate");
     birthdateInput.maxlength = 10;
     const birthdateError = document.getElementById("errorbirthdate");
+    // Dates de naissances minimum et maximum de la personne souhaitant s'inscrire
     const birthdateFieldInputMax = "2003-05-01";
     const birthdateFieldInputMin = "1900-01-01";
     // vérification changement attribut du champ par l'utilisateur
@@ -278,8 +279,7 @@ const formSubmission = (event) => {
         errorSubmitMessage();
         return false;
     }
-    document.getElementById('form').action = "validation.html"
-};
-
+    document.getElementById('form').action = "confirmation.html"
+}
 formInit();
 

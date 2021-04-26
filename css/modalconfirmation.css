@@ -166,7 +166,6 @@ main {
 }
 
 #bgform {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -179,6 +178,7 @@ main {
 
 .content {
   margin: 5% auto;
+  height:42em;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -190,6 +190,11 @@ main {
   color: #fff;
   padding-top: 1
   0px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  align-content: center;
 }
 
 #bgvalid{
@@ -199,6 +204,19 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px 15px;
+  padding: 15px 8%;
+  margin: 15px 15px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#validationmessage {
+font-weight: 200;
+font-size:2em;
 }
 
 label {

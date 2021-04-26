@@ -5,10 +5,9 @@
   <meta charset="utf-8" />
   <title>Game On</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/validation.css" />
+  <link rel="stylesheet" href="css/modalconfirmation.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
-  <meta http-equiv="Refresh" content="15; url=index.html">
 </head>
 
 <body>
@@ -23,37 +22,48 @@
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
-      <a href="#"  class="icon" id="burgericon">
+      <a href="#" class="icon" id="burgericon">
         <i class="fa fa-bars"></i>
       </a>
     </nav>
   </div>
-  
+
   <main>
     <div class="hero-section">
       <div class="hero-content">
         <h1 class="hero-headline">
-          Merci, vous êtes bien inscrit(e) !
+          Marathon national de jeux vidéos
         </h1>
         <p class="hero-text">
-          Vous recevrez dans quelques instants un email de confirmation. Vous allez être automatiquement redirigé(e) vers la page d'accueil dans quelques secondes.
+          Vous aimez jouer ? Notre prochain évènement gaming est ouvert
+          aux réservations... Places limitées !
         </p>
-      <button  class="btn-signup modal-btn">Page d'accueil
-        </button>
+
       </div>
       <div class="hero-img">
-        <img src="images/bg_validation.jpg" alt="img" />
+        <img src="images/bg_img.jpg" alt="img" />
       </div>
-     <button  class="btn-signup modal-btn">Page d'accueil
-      </button>
     </div>
 
+    <div class="bground" id="bgform">
+      <div class="content" id="content">
+        <span class="close" id="close"></span>
+        <div class="modal-body" id="form-body">
+            <span id="validationmessage">
+                Merci !<br>
+                 Votre réservation a été reçue.
+            </p>
+        </div>
+        <input class="btn-submit" type="submit" id="submitbutton" value="Fermer" />
+      </div>
+    </div>
   </main>
   <footer>
     <p class="copyrights">
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
+  <script src="js/modalconfirmation.js"></script>
   <script src="js/redirect.js"></script>
 </body>
 
